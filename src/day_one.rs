@@ -35,9 +35,9 @@ pub fn secret_entrance_v1() {
         let rotation_operation = line.unwrap();
         let rotation = Rotation::new(&rotation_operation);
 
-        let current_move_by = move_by % 100;
+        let current_move_by = &rotation.move_by % 100;
 
-        if operation == "L" {
+        if &rotation.direction == "L" {
             // minus
             if current_dial_position - current_move_by < 0 {
                 let rest = current_move_by - current_dial_position;
@@ -60,7 +60,7 @@ pub fn secret_entrance_v1() {
             password += 1;
         }
 
-        println!("Rolling for {} -> {}: {} ({}) ==> {}", current_rotation, operation, move_by, current_move_by, current_dial_position);
+        println!("Rolling for {} -> {}: {} ({}) ==> {}", rotation_operation, &rotation.direction, &rotation.move_by, current_move_by, current_dial_position);
 
 
     }
