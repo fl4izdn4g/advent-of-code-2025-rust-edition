@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-const INPUT_DATA: &str = "C:\\Users\\lukasz.gorecki2\\RustroverProjects\\AdventOfCode2025\\src\\data\\input.txt";
+const INPUT_DATA: &str = "src/data/input.txt";
 const START_POSITION: i16 = 50;
 fn get_rotations() -> BufReader<File> {
     let file = File::open(INPUT_DATA).expect("couldn't open file");
